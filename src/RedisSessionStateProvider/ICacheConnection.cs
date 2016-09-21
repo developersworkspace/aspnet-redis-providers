@@ -13,8 +13,8 @@ namespace Microsoft.Web.Redis
         KeyGenerator Keys { get; set; } 
         void Set(ISessionStateItemCollection data, int sessionTimeout);
         void UpdateExpiryTime(int timeToExpireInSeconds);
-        bool TryTakeWriteLockAndGetData(DateTime lockTime, int lockTimeout, out object lockId, out ISessionStateItemCollection data, out int sessionTimeout);
-        bool TryCheckWriteLockAndGetData(out object lockId, out ISessionStateItemCollection data, out int sessionTimeout);
+        bool TryTakeWriteLockAndGetData(bool isLocking, DateTime lockTime, int lockTimeout, out object lockId, out ISessionStateItemCollection data, out int sessionTimeout);
+        bool TryCheckWriteLockAndGetData(bool isLocking, out object lockId, out ISessionStateItemCollection data, out int sessionTimeout);
         void TryReleaseLockIfLockIdMatch(object lockId, int sessionTimeout);
         void TryRemoveAndReleaseLockIfLockIdMatch(object lockId);
         void TryUpdateAndReleaseLockIfLockIdMatch(object lockId, ISessionStateItemCollection data, int sessionTimeout);

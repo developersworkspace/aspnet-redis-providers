@@ -29,6 +29,7 @@ namespace Microsoft.Web.Redis
         public int OperationTimeoutInMilliSec { get; set; }
         public string ConnectionString { get; set; }
         public string RedisSerializerType { get; set; }
+        public bool IsLocking { get; set; }
 
         /* Empty constructor required for testing */
         internal ProviderConfiguration()
@@ -41,7 +42,8 @@ namespace Microsoft.Web.Redis
             configuration.ThrowOnError = GetBoolSettings(config, "throwOnError", true);
             int retryTimeoutInMilliSec = GetIntSettings(config, "retryTimeoutInMilliseconds", 5000);
             configuration.RetryTimeout = new TimeSpan(0, 0, 0, 0, retryTimeoutInMilliSec);
-            
+            configuration.IsLocking = GetBoolSettings(config, "isLocking", true);
+
             // Get request timeout from config
             HttpRuntimeSection httpRuntimeSection = ConfigurationManager.GetSection("system.web/httpRuntime") as HttpRuntimeSection;
             configuration.RequestTimeout = httpRuntimeSection.ExecutionTimeout;

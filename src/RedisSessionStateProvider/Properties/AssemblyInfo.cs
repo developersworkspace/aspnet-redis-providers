@@ -10,11 +10,13 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyDescription("")]
+
+[assembly: AssemblyTitle("RedisSessionStateProvider")]
+[assembly: AssemblyDescription("Locking/Non-Locking Redis Session State Provider")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("SessionStateProvider")]
-[assembly: AssemblyCopyright("Copyright ©  2014")]
+[assembly: AssemblyCompany("Euromonitor International")]
+[assembly: AssemblyProduct("RedisSessionStateProvider")]
+[assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: AssemblyMetadata("Serviceable", "True")]
@@ -30,10 +32,10 @@ using System.Runtime.InteropServices;
 // COM, set the ComVisible attribute to true on that type.
 [assembly: ComVisible(false)]
 #if !NOCOMMONASSEMBLYVERSION
-[assembly: AssemblyVersion("1.1.0.0")]
-[assembly: AssemblyFileVersion("1.1.0.0")]
+[assembly: AssemblyVersion("10.3.0")]
+[assembly: AssemblyFileVersion("10.3.0")]
 #endif
-[assembly: AssemblyTitle("Cache Providers")]
+
 
 namespace System.Reflection
 {
